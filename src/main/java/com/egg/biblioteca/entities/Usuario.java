@@ -1,6 +1,7 @@
 package com.egg.biblioteca.entities;
 
 import com.egg.biblioteca.enums.Rol;
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 
@@ -9,6 +10,7 @@ public class Usuario {
 
     @Id
     private String email;
+    @Column(unique = true)
     private String userName;
     private String password;
     private Rol rol;

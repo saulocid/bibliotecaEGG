@@ -9,53 +9,65 @@
 </head>
 
 <body>
-    <header id="header">
-        <div>
-            <h1>Bliblioteca</h1>
-        </div>
-    </header>
-    <div class="navegador">
-        <nav class="navbar navbar-dark">
+    <header class="header">
+        <nav>
             <ul>
                 <li>
-                    <form action="/" method="get">
-                        <button class="btn">HOME</button>
-                    </form>
+                    <h1>Bliblioteca EGG</h1>
                 </li>
                 <li>
-                    <form action="/autor/lista" method="get">
-                        <button class="btn">Autores</button>
-                    </form>
+                    <h1 class="cerrar-sesion">
+                        <a th:href="@{/login}">Cerrar Sesión</a>
+                    </h1>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <div class="navegador">
+        <nav>
+            <ul>
+                <li>
+                    <a th:href="@{/}">HOME</a>
                 </li>
                 <li>
-                    <form action="/editorial/lista" method="get">
-                        <button class="btn">Editoriales</button>
-                    </form>
+                    <a th:href="@{autor/lista}">Autores</a>
                 </li>
                 <li>
-                    <form action="/libro/lista" method="get">
-                        <button class="btn">Libros</button>
-                    </form>
+                    <a th:href="@{editorial/lista}">Editoriales</a>
+                </li>
+                <li>
+                    <a th:href="@{libro/lista}">Libros</a>
                 </li>
             </ul>
         </nav>
     </div>
     <main>
         <div class="container">
-            <form action="/autor/registrar" method="get">
-                <button class="btn btn-secondary">Registro de Autor</button>
-            </form>
-            <form action="/editorial/registrar" method="get">
-                <button class="btn btn-secondary">Registro de Editorial</button>
-            </form>
-            <form action="/libro/registrar" method="get">
-                <button class="btn btn-secondary">Registro de Libro</button>
-            </form>
+            <ul>
+                <li>
+                    <form action="/autor/registrar" method="get">
+                        <button class="btn btn-secondary">Registro de Autor</button>
+                    </form>
+                </li>
+                <li>
+                    <form action="/editorial/registrar" method="get">
+                        <button class="btn btn-secondary">Registro de Editorial</button>
+                    </form>
+                </li>
+                <li>
+                    <form action="/libro/registrar" method="get">
+                        <button class="btn btn-secondary">Registro de Libro</button>
+                    </form>
+                </li>
+            </ul>
             <div th:if="${exito != null}">
                 <p th:text="${exito}"></p>
             </div>
         </div>
     </main>
+    <footer class="footer">
+        <h1>Biblioteca EGG &copy; 2023 - Todos los derechos reservados</h1>
+    </footer>
 </body>
 
 </html>

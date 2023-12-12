@@ -1,34 +1,94 @@
-body{
+body {
     display: block;
     margin: 0 auto;
     background-color: rgb(255, 255, 255);
     color: rgb(0, 0, 0);
     margin: 0 auto;
     text-align: center;
+    justify-items: center;
+    align-items: center;
 }
 
-ul{
+a {
+    color: black;
+    text-decoration: none;
+}
+
+ul {
     list-style: none;
 }
 
-.container > *{
+header nav ul {
+    text-align: start;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+header nav ul li h1{
+    font-size:3rem;
+}
+
+.cerrar-sesion {
+    text-align: end;
+}
+
+.container form div {
     margin: 20px;
 }
 
-#header{
-    padding-top: 50px;
-    padding-bottom: 50px;
-}
-
-.container form div{
-    margin: 20px;
-}
-
-table{
+table {
     border: black 1px solid;
 }
 
-.navegador{
-    display: block;
-    text-align: center;
+li {
+    display: inline-block;
+    list-style: none;
+    margin-right: 20px;
+}
+
+.navegador {
+    font-size: 2rem;
+    background-color: rgb(43, 43, 43);
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+}
+
+.navegador nav ul li a {
+    color: white;
+}
+
+.navegador nav ul li a:hover {
+    color: rgb(100, 188, 255);
+    filter: drop-shadow(0 0 3px white);
+    transition: 300ms;
+    font-size: 2.2rem;
+}
+
+.navegador nav ul li a:not(:hover) {
+    transition: 300ms;
+}
+
+main {
+    padding-top: 200px;
+    padding-bottom: 200px;
+    background-image: url(img/fondo.jpg);
+    background-size: 100%;
+}
+
+
+button{
+    background-color: rgb(100, 188, 255);
+    border: grey 1px solid;
+    border-radius: 5px;
+    padding: 10px;
+}
+
+button:hover{
+    background-color: rgb(87, 158, 212);
+}
+
+.footer{
+    background-color: rgb(87, 158, 212);
+    padding-top: 50px;
+    padding-bottom: 50px;
 }
