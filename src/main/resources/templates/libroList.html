@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de libros</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" th:href="@{/style.css}">
+</head>
+
+<body>
+    <header>
+        <div>
+            <h1>Lista de libros</h1>
+        </div>
+    </header>
+    <nav id="navbar" class="navbar navbar-dark">
+        <ul>
+            <li>
+                <form action="/" method="get">
+                    <button class="btn">HOME</button>
+                </form>
+            </li>
+            <li>
+                <form action="/autor/lista" method="get">
+                    <button class="btn">Autores</button>
+                </form>
+            </li>
+            <li>
+                <form action="/editorial/lista" method="get">
+                    <button class="btn">Editoriales</button>
+                </form>
+            </li>
+            <li>
+                <form action="/libro/lista" method="get">
+                    <button class="btn">Libros</button>
+                </form>
+            </li>
+        </ul>
+    </nav>
+    <main>
+
+        <table class="tabla container">
+            <thead>
+                <tr>
+                    <th class="col-2" scope="col">ISBN del Libro</td>
+                    <th class="col-2" scope="col">Título del Libro</td>
+                    <th class="col-2" scope="col">Cantidad de Libros</td>
+                    <th class="col-2" scope="col">Autor</td>
+                    <th class="col-2" scope="col">Editorial</td>
+                    <th class="col col-4" scope="col">Acciones</td>
+                </tr>
+            </thead>
+            <tbody th:each="libro: ${libros}">
+                <tr>
+                    <th class="col-2" scope="row" th:text="${libro.isbn}"></th>
+                    <td class="col-2" th:text="${libro.titulo}"></td>
+                    <td class="col-2" th:text="${libro.ejemplares}"></td>
+                    <td class="col-2" th:text="${libro.autor.nombre}"></td>
+                    <td class="col-2" th:text="${libro.editorial.nombre}"></td>
+                    <td><a th:href="@{/libro/modificar/__${libro.isbn}__}">Modificar</a></td>
+                </tr>
+            </tbody>
+        </table>
+
+    </main>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

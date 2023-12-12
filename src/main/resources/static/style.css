@@ -1,0 +1,34 @@
+body{
+    display: block;
+    margin: 0 auto;
+    background-color: blueviolet;
+    color: yellow;
+    margin: 0 auto;
+    text-align: center;
+}
+
+ul{
+    list-style: none;
+}
+
+.container > *{
+    margin: 20px;
+}
+
+#header{
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+
+.container form div{
+    margin: 20px;
+}
+
+table{
+    border: black 1px solid;
+}
+
+.navegador{
+    display: block;
+    text-align: center;
+}
